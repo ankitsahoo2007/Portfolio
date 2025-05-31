@@ -1,0 +1,178 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: filter 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.menu-icon div {
+  background: white;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Navigation */
+nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #444;
+  width: 150px;
+  display: none;
+  flex-direction: column;
+  z-index: 4;
+}
+
+nav a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid #555;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #666;
+}
+
+/* Show menu when checked */
+#menu-toggle:checked + label + nav {
+  display: flex;
+}
+
+/* Overlay for blur effect */
+#menu-toggle:checked ~ .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+#menu-toggle:checked ~ main {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Main section with blurred background */
+main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./istockphoto-1384857004-612x612.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(7px);
+  z-index: 0;
+}
+
+/* Foreground clear content */
+#page1 {
+  position: relative;
+  z-index: 1;
+  height: 90vh;
+  width: 80%;
+  background-image: url(./istockphoto-1502271245-612x612.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10%;
+  padding: 40px;
+  color: white;
+  text-align: center;
+  border-style: groove;
+  font-size: x-large;
+}
+#page1 a{
+    color: greenyellow;}
+.project-card a{
+    background-color: rgb(16, 29, 41);
+   border-style: dotted;
+   border-color: aliceblue;
+}
+.project-card a:hover{
+    background-color: rgb(170, 7, 195);
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .menu-icon {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    width: auto;
+  }
+
+  nav a {
+    border: none;
+    padding: 0 15px;
+    color: white;
+  }
+
+  nav a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  .overlay {
+    display: none !important;
+  }
+
+  main {
+    filter: none !important;
+    pointer-events: auto !important;
+  }
+}
