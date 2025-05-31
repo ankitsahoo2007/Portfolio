@@ -128,9 +128,13 @@ main::before {
   padding: 40px;
   color: white;
   text-align: center;
-  border-style: groove;
-  font-size: xx-large;
-}
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+
+word-wrap: break-word;
+  overflow-wrap: break-word;
+ 
+ border-style: groove;}
+  
 #page1 a{
     color: greenyellow;}
 

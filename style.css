@@ -136,7 +136,7 @@ main::before {
 }
 #page1 h1{
   font-size: 40px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 
  
 }
