@@ -128,7 +128,7 @@ main::before {
   padding: 40px;
   color: white;
   text-align: center;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: large;
 
 word-wrap: break-word;
   overflow-wrap: break-word;
